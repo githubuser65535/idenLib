@@ -54,3 +54,9 @@ Supports [`x86`](https://en.wikipedia.org/wiki/X86) and [`AMD64/x86-64`](https:/
 - Disassembly by [Zydis](https://zydis.re)
 - Compression by [zstd](https://github.com/facebook/zstd)
 - Icon by [freepik](https://www.flaticon.com/authors/freepik)
+
+很多 貓ware 都很雞掰把程式碼靜態編譯, 在 IDA/x64dbg 分析的時候感覺很痛苦對ㄇ? 比方說 sprintf_s, scanf_s 看到吐血對ㄅ, 不要說你沒有過XDDD
+
+有人做ㄌ一批好棒棒的玩具, 可以自動掃瞄該段程式碼跟你系統中的函數庫去比對程式碼哪一段吻合, 就可以從醜醜ㄉ靜態程式碼反推得知是哪一個垃圾函數靜態被編譯器 link 上去的啦
+
+至於掃描的手段就是各位寫外掛大大們很常用到的 AOB 搜尋法la, 把 opcode 給記錄下來, 遇到 data 或是 offset 就跳過不當特徵處理
